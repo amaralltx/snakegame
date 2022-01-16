@@ -1,0 +1,77 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    min-height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+header {
+    padding: 8px;
+    flex: 0 1 8%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    background-color: rgb(218, 255, 229);
+    border: 3px solid rgb(127, 192, 146);
+    border-radius: 16px;
+    width: 360px;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-body {
+    flex: 1 1 auto;
+    border: 1px solid rgb(201, 255, 234);
+    background-color: rgb(194, 221, 198);
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-content {
+    position: absolute;
+    z-index: 2;
+    border: 16px solid rgb(12, 85, 12);
+    border-radius: 16px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 8px 8px 8px;
+    background-color: rgb(12, 85, 12);
+}
+
+.game-score {
+    color: rgb(238, 238, 238);
+    font-size: 2em; 
+}
+
+.game-board {
+    background-color: rgb(242, 255, 243);
+    height: 640px;
+    width: 640px;
+    border-radius: px;
+}
+
+footer {
+    flex: 0 1 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+}
