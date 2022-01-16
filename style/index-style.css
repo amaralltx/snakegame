@@ -1,4 +1,5 @@
-*{
+*{  
+    font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -9,41 +10,43 @@ html, body {
     width: 100vw;
     min-height: 100%;
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
 }
 
-header {
-    padding: 8px;
-    flex: 0 1 8%;
+.page-header {
+    padding: 0px 32px;
+    flex: 0 1 6%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    background-color: rgb(184,216,190);;
 }
 
+
 .logo {
-    background-color: rgb(218, 255, 229);
-    border: 3px solid rgb(127, 192, 146);
-    border-radius: 16px;
     width: 360px;
     height: 90%;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
+.logo-title {
+    color: white;
+}
 .game-body {
-    flex: 1 1 auto;
-    border: 1px solid rgb(201, 255, 234);
-    background-color: rgb(194, 221, 198);
-    height: 85vh;
+    width: 100%;
+    margin-top: 12vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    z-index: 1;
 }
 
 .game-content {
-    position: absolute;
-    z-index: 2;
-    border: 16px solid rgb(12, 85, 12);
+    margin-top: 64px;
+    align-items: center;
+    border: 16px solid rgb(184,216,190);
     border-radius: 16px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
@@ -53,23 +56,74 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0px 8px 8px 8px;
-    background-color: rgb(12, 85, 12);
+    margin: -1px;
+    background-color: rgb(184,216,190);
 }
 
 .game-score {
-    color: rgb(238, 238, 238);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(255, 255, 255);
     font-size: 2em; 
 }
 
+.apple-icon {
+    padding-right: 12px;
+    width: 1.5em;
+}
+
+.material-icons-outlined {
+    font-size: 2em;
+    color: white;
+    padding: 0px 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.material-icons-outlined:hover {
+    transform: scale(1.2);
+}
+
+#restart-btn {
+    transition: transform 0.3s ease-in-out;
+}
+
+#restart-btn:checked {
+    transform: rotate(180deg);
+}
+
 .game-board {
-    background-color: rgb(242, 255, 243);
-    height: 640px;
-    width: 640px;
-    border-radius: px;
+    margin: -1px;
+    background-color: rgb(255, 255, 255);
+    height: 480px;
+    width: 480px;
+}
+
+.snake-head {
+    background-color: rgb(255, 174, 174);
+    width: 32px;
+    height: 32px;
+}
+
+table {
+     border-collapse: collapse;
+}
+td {
+    border: none;
+}
+.td-escura {
+    background-color: rgb(255, 255, 255);
+}
+.td-clara {
+    background-color: rgb(196, 226, 202);
 }
 
 footer {
-    flex: 0 1 24px;
+    background-color: rgb(184,216,190);
+    color: white;
+    padding: 2px;
+    flex: 0 1 4%;
     display: flex;
     justify-content: center;
     align-items: center;
