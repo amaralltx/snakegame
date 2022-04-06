@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.main-header {
+    height: 6%;
+    background-color: rgb(184, 216, 190);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 2em;
+}
+
+.logo {
+    font-family: "Press Start 2P", cursive;
+    color: white;
+}
+
+.menu-icons span {
+    margin-top: 8px;
+    color: white;
+    font-size: 1.1em;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-icons span:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+/*----------------------BODY----------------------*/
+.main-body {
+    position: relative;
+    height: 1000px;
+    background-color: rgb(247, 255, 247);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-screen {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game-board {
+    /* 22*x22*25*/
+    width: 550px;
+    height: 550px;
+    background-color: white;
+    border: 16px solid rgb(184, 216, 190);
+    border-top: 0px;
+    border-radius: 0 0 16px 16px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+        rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    /* limitação para a não ter sombra na borda de cima */
+    clip-path: inset(0px -100px -100px -100px);
+
+    display: grid;
+    grid-template-columns: repeat(22, 1fr);
+    grid-template-rows: repeat(22, 1fr);
+}
+
+.snake {
+    background-color: rgb(112, 146, 124);
+}
+
+.apple {
+    background-color: rgb(231, 96, 96);
+}
+/* Menu heigth = 16 + 48 = 64px, seu tamanho + borda */
+.game-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 16px 16px 0 0;
+    height: 64px;
+    padding: 8px 8px 8px 8px;
+    background-color: rgb(184, 216, 190);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+        rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    clip-path: inset(0px -100px -100px -100px);
+    padding: 16px;
+}
+
+.apple-icon {
+    width: 48px;
+}
+
+.score-number {
+    color: white;
+    font-family: "Press Start 2P", cursive;
+    font-size: 38px;
+}
+
+.menu-btns span {
+    color: white;
+    font-size: 38px;
+}
+/*--------------------FOOTER----------------------*/
+.main-footer {
+    height: 4%;
+    background-color: rgb(184, 216, 190);
+}
