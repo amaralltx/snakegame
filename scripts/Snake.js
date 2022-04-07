@@ -1,4 +1,3 @@
-import { Board } from "./Board.js";
 import { getInputDirection } from "./gameInputs.js";
 
 export class Snake {
@@ -22,16 +21,19 @@ export class Snake {
         this.board = board;
     }
 
+    getSnakeHead() {
+        return this.body[0];
+    }
+
     update() {
         const inputDirection = getInputDirection();
-        
+
         for (let i = this.body.length - 2; i >= 0; i--) {
             this.body[i + 1] = { ...this.body[i] };
         }
 
         this.body[0].x += inputDirection.x;
         this.body[0].y += inputDirection.y;
-
     }
 
     draw() {
@@ -47,14 +49,20 @@ export class Snake {
     }
 
     growSnake() {
-        console.log(this.body);
         // adicionando uma copia do último elemento no fim do array
         this.body.push({
             ...this.body[this.body.length - 1],
         });
+    }
 
-        this.body[this.body.length - 1].x =
-            this.body[this.body.length - 2].x + 1;
+    hasSelfCollision() {
+        return this.body.some((piece, index) => {
+            if (index === 0 || this.body.length <= 3) return false;
+            return (
+                this.body[0].x == piece.x &&
+                this.body[0].y == piece.y
+            );
+        });
     }
 
     checkCollision(position) {

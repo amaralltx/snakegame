@@ -79,6 +79,7 @@ body {
 }
 
 .apple {
+    border: 2px solid white;
     background-color: rgb(231, 96, 96);
 }
 /* Menu heigth = 16 + 48 = 64px, seu tamanho + borda */
@@ -97,16 +98,19 @@ body {
 }
 
 .apple-icon {
-    width: 48px;
+    margin-left: 8px;
+    width: 42px;
 }
 
 .score-number {
+    margin-left: 8px;
     color: white;
     font-family: "Press Start 2P", cursive;
     font-size: 38px;
 }
 
 .menu-btns span {
+    margin-right: 8px;
     color: white;
     font-size: 38px;
 }

@@ -1,4 +1,6 @@
 export class Apple {
+    // quanto maior o y mais pra baixo
+    // quanto maior o x mais pra direita
     applePosition = {
         x: 0,
         y: 0,
@@ -11,11 +13,11 @@ export class Apple {
 
     update() {
         if (
-            this.snake.body[0].x == this.applePosition.x &&
-            this.snake.body[0].y == this.applePosition.y
+            this.snake.getSnakeHead().x == this.applePosition.x &&
+            this.snake.getSnakeHead().y == this.applePosition.y
         ) {
             this.applePosition = this.genarateRandomPosition();
-            this.board.score++;
+            this.board.addScore();
             this.snake.growSnake();
         }
     }
@@ -31,6 +33,7 @@ export class Apple {
     }
 
     spawnApple() {
+
         while (this.applePosition.y === 13 || this.applePosition.y === 0) {
             this.applePosition.x = Math.floor(Math.random() * this.board.width);
             this.applePosition.y = Math.floor(Math.random() * this.board.heith);
