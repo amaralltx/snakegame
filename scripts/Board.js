@@ -26,4 +26,12 @@ export class Board {
         this.score++;
         this.$html_score.innerHTML = this.score;
     }
+
+    restartBoard(){
+        while(this.$html_board.firstChild){
+            this.$html_board.removeChild(this.$html_board.lastChild);
+        }
+        this.score = 0;
+        this.$html_score.innerHTML = 0;
+    }
 }

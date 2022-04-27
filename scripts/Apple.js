@@ -12,6 +12,8 @@ export class Apple {
     }
 
     update() {
+        if(this.applePosition.x == 0) this.applePosition.x++
+        if(this.applePosition.y == 0) this.applePosition.y++
         if (
             this.snake.getSnakeHead().x == this.applePosition.x &&
             this.snake.getSnakeHead().y == this.applePosition.y
@@ -19,6 +21,7 @@ export class Apple {
             this.applePosition = this.genarateRandomPosition();
             this.board.addScore();
             this.snake.growSnake();
+            document.querySelector("#eat-sound").play();
         }
     }
 
@@ -34,10 +37,15 @@ export class Apple {
 
     spawnApple() {
 
-        while (this.applePosition.y === 13 || this.applePosition.y === 0) {
-            this.applePosition.x = Math.floor(Math.random() * this.board.width);
-            this.applePosition.y = Math.floor(Math.random() * this.board.heith);
+        while (this.applePosition.y === 10 || this.applePosition.y === 0 || this.applePosition.x === 0) {
+            this.applePosition.x = Math.floor(Math.random() * this.board.width)+1;
+            this.applePosition.y = Math.floor(Math.random() * this.board.heith)+1;
         }
+    }
+
+    restartApple() {
+        this.applePosition = this.genarateRandomPosition();
+        this.draw();
     }
 
     genarateRandomPosition() {

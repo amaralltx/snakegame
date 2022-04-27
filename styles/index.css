@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -39,6 +39,49 @@ body {
     cursor: pointer;
     transform: scale(1.1);
 }
+
+.info-modal {
+    visibility: hidden;
+    z-index: 2;
+    top: 60px;
+    right: 32px;
+    position: absolute;
+    width: 450px;
+    height: 320px;
+    border: 8px solid rgb(184, 216, 190);
+    border-radius: 8px;
+    background-color: white;
+    display: flex;
+    font-size: 22px;
+    text-align: center;
+    align-items: center;
+}
+
+.info-modal > span{
+    padding: 24px;
+    font-family: 'Odibee Sans', cursive;
+    color: rgb(184, 216, 190);
+}
+
+.info-titles {
+    color: rgb(167, 167, 167);
+    margin-top: 16px;
+    font-size: 1.25em;
+}
+
+.info-modal > span > ul {
+    padding-left: 16px;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.owner {
+    bottom: 22px;
+    right: 16px;
+    position: absolute;
+    list-style-type: none;
+    text-align: right;
+}
 /*----------------------BODY----------------------*/
 .main-body {
     position: relative;
@@ -47,6 +90,89 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.start-screen{
+    
+    position: absolute;
+    margin-bottom: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Press Start 2P", cursive;
+    z-index: 2;
+    width: 550px;
+    height: 614px;
+    
+    /*
+    background-color: white;
+    border: 16px solid rgb(184, 216, 190);
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+        rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    /* limitação para a não ter sombra na borda de cima */
+    /* clip-path: inset(0px -100px -100px -100px);  */
+}
+
+.start-screen > span{
+    color: rgb(82, 82, 82);
+    animation: zoom-in-zoom-out 1s ease infinite;
+}
+@keyframes zoom-in-zoom-out {
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.1, 1.1);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+}
+
+.end-screen{
+    position: absolute;
+    display: flex;
+    font-family: "Press Start 2P", cursive;
+    z-index: 2;
+    width: 550px;
+    height: 614px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 16px solid rgb(184, 216, 190);
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    /* limitação para a não ter sombra na borda de cima */
+    clip-path: inset(0px -100px -100px -100px);
+    flex-direction: column;
+    visibility: hidden;
+}
+
+.end-screen span{
+    margin: 8px;
+}
+
+.final-score {
+    color: rgb(142, 190, 151);
+    font-size: 20px;
+}
+
+.final-restart {
+    color: rgb(82, 82, 82);
+    cursor: pointer;
+    animation: zoom-in-zoom-out 1s ease infinite;
+    font-size: 18px;
+    margin: 8px;
+    transition: color 0.25s ease-out;
+}
+
+.final-restart:hover {
+    color: rgb(62, 97, 68);
+}
+.game {
+    opacity: 0.8;
 }
 
 .game-screen {
@@ -65,10 +191,10 @@ body {
     border-top: 0px;
     border-radius: 0 0 16px 16px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-        rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
     /* limitação para a não ter sombra na borda de cima */
     clip-path: inset(0px -100px -100px -100px);
-
+    
     display: grid;
     grid-template-columns: repeat(22, 1fr);
     grid-template-rows: repeat(22, 1fr);
@@ -99,6 +225,7 @@ body {
 
 .apple-icon {
     margin-left: 8px;
+    margin-bottom: 4px;
     width: 42px;
 }
 
@@ -114,8 +241,28 @@ body {
     color: white;
     font-size: 38px;
 }
+
+#menu-restart, #menu-pause {
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+}
+
+#menu-restart:hover, #menu-pause:hover {
+    transform: scale(1.1);
+} 
+
 /*--------------------FOOTER----------------------*/
 .main-footer {
     height: 4%;
     background-color: rgb(184, 216, 190);
+}
+
+span {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }

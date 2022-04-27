@@ -28,29 +28,60 @@
             <span id="profile-icon" class="material-icons-outlined">
                 face
             </span>
-            <span class="material-icons-outlined" id="info-icon">
+            <span id="info-icon" class="material-icons-outlined">
                 info
             </span>
         </div>
     </header>
+    <div class="info-modal" id="info-modal">
+        <span>
+            <p class="info-titles">Sobre</p>
+            <p> Projeto criado com o propósito de pôr em prática estudos previamente realizados nas tecnologias JavaScript, HTML e CSS. </p> 
+            <p>Consiste no clássico jogo Snake, criado de uma forma a qual não foi necessário utilizar canvas mas sim manipular os elementos HTML e seu estilo a partir do script</p>
+            <p class="info-titles">Controles</p>
+            <ul>
+                <li>
+                    Direções: WASD/Arrow Keys
+                </li>
+                <li>
+                    Space: Pause
+                </li>
+                <li class="owner">
+                    By: Lucas Amaral
+                </li>
+            </ul>
+        </span>
+    </div>
     <div class="main-body">
         <div class="game-screen">
-            <div class="game-menu">
-                <div class="score">
-                    <img src="images/apple-icon.png" alt="Score" srcset="" class="apple-icon">
-                    <span class="score-number" id="score">0</span>
+            <div class="start-screen" id="start-screen">
+                <span>Press any key to start</span>
+                <img src="" alt="">
+            </div>
+            <div class="game" id="game">
+                <div class="game-menu">
+                    <div class="score">
+                        <img src="images/apple-icon.png" alt="Score" srcset="" class="apple-icon">
+                        <span class="score-number" id="score">0</span>
+                    </div>
+                    <div class="menu-btns">
+                        <span id="menu-pause" class="material-icons-outlined">
+                            pause
+                        </span>
+                        <span id="menu-restart" class="material-icons-outlined">
+                            replay
+                        </span>
+                    </div>
                 </div>
-                <div class="menu-btns">
-                    <span class="material-icons-outlined">
-                        pause
-                    </span>
-                    <span class="material-icons-outlined">
-                        replay
-                    </span>
+                <div class="game-board" id="board">
                 </div>
             </div>
-            <div class="game-board" id="board">
+            <div class="end-screen" id="end-screen">
+                <span style="font-size: 36px; color: rgb(82, 82, 82); " >GAME OVER</span>
+                <span class="final-score" id="final-score"></span>
+                <span id="screen-restart" class="final-restart">restart</span>
             </div>
+
         </div>
     </div>
     <footer class="main-footer">
@@ -59,6 +90,8 @@
     <script>
         
     </script>
-     
+    <audio id="eat-sound" src="sounds/eat.mp3"></audio>
+    <audio id="win-sound" src="sounds/win-sound.mp3"></audio>
+    <audio id="game-over-sound" src="sounds/game-over-sound.mp3"></audio>
 </body>
 </html>
