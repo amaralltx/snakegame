@@ -4,6 +4,5 @@ Projeto criado com o propósito de pôr em prática estudos previamente realizad
 
 ## [Link](https://amaralltx.github.io/snakegame/)
 
-<br />
-<h3>Visual do Projeto</h3>
+## Visual do Projeto
 <img src="images/playing.gif" alt="">
